@@ -1,0 +1,50 @@
+FPS 100
+OC 0.4,0.4,0.4
+
+LC 0.8,0.8,0
+DC 0,0,0
+F default
+
+C
+S Here
+W 0.2
+
+C
+S we
+W 0.2
+
+C
+S go!
+W 0.75
+
+LC 0.7,0.7,1
+F sil/Sofia-Regular.otf
+C
+
+SL You rock !
+W 0.75
+
+LC 0.5,1,0.4
+F nonfree/seguiemj.ttf
+SU
+SU 🎄🎄🎄
+W 0.75
+SD
+W 0.25
+
+LC 0.2,0.3,1
+DC 0,0,0
+OC 0,0,0
+F dumb/2Dumb.ttf
+
+C
+S We
+W 0.2
+
+C
+S did
+W 0.2
+
+C
+S it!
+W 1

@@ -1,0 +1,12 @@
+FPS 75
+LC 0,1,1
+DC 0.2,0.2,0.2
+OC 0.5,0.5,0.5
+F blackjack.otf
+C
+SL Hi        
+W 1
+SL George    
+W 1
+SL      OK        
+W 1
