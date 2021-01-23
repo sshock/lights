@@ -26,16 +26,22 @@ function setFont(name)
   end
 end
 
-function actionCommand()
-  return actions[action].command
+function currentAction()
+  return actions[action]
 end
 
-function actionText()
-  return actions[action].text
+function actionCommand(a)
+  a = a or currentAction()
+  return a.command
 end
 
-function invisibleAction()
-  local cmd = actionCommand()
+function actionText(a)
+  a = a or currentAction()
+  return a.text
+end
+
+function invisibleAction(a)
+  local cmd = actionCommand(a)
   return cmd == "C" or cmd == "F" or cmd == "LC" or cmd == "DC" or cmd == "OC" or cmd == "FPS"
 end
 
@@ -79,6 +85,15 @@ function addActionLine(line)
   addAction(command, text)
 end
 
+-- Ensure there is at least one visible action; otherwise, the program will hang.
+function ensureOneVisibleAction()
+  local haveVisibleActions = false
+  for i = 0, actions.size - 1 do
+    if not invisibleAction(actions[i]) then haveVisibleActions = true end
+  end
+  if not haveVisibleActions then addAction("S", "") end
+end
+
 function loadActions(filename)
   actions = { size = 0 }
   addAction("FPS", "40")
@@ -96,6 +111,7 @@ function loadActions(filename)
   for line in lines do
     addActionLine(line)
   end
+  ensureOneVisibleAction()
 
   action = -1
   step = 0
