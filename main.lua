@@ -45,6 +45,15 @@ function invisibleAction(a)
   return cmd == "C" or cmd == "F" or cmd == "LC" or cmd == "DC" or cmd == "OC" or cmd == "FPS"
 end
 
+function blankWidth(a)
+  local text = actionText(a)
+  if text:len() == 0 then
+    return viewGrid.cols
+  else
+    return text:len()
+  end
+end
+
 function handleInvisibleAction()
   local cmd = actionCommand()
   local text = actionText()
@@ -175,7 +184,7 @@ function updateSourceGrid()
   -- Create canvas to hold text.
   local width = text:getWidth()
   local height = viewGrid.rows -- should match text:getHeight()
-  if width < 1 then width = 1 end
+  if width < 1 then width = blankWidth() end
   local canvas = love.graphics.newCanvas(width, height)
 
   -- Print text on canvas.
