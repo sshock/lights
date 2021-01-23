@@ -1,0 +1,19 @@
+FPS 78
+DC 0.2,0.2,0.2
+OC 0.5,0.5,0.5
+C
+LC 1,0.2,0.2
+SR       Hi
+W 1
+LC 1,0.5,0
+SL I 
+LC 1,1,0
+SL am 
+LC 0.15,1,0.3
+SL Alex
+W 1
+SU
+LC 0.2,0.2,1
+SL I like perler beads
+W 1
+SD
