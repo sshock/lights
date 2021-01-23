@@ -139,7 +139,8 @@ function calculateActionSteps()
   local text = actionText()
 
   if cmd == "W" then
-    steps = fps * tonumber(text)
+    steps = math.floor(fps * tonumber(text))
+    if steps < 1 then steps = 1 end
   elseif cmd == "S" then
     steps = 1
   elseif cmd == "SL" or cmd == "SR" then
