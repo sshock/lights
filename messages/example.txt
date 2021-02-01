@@ -21,7 +21,7 @@ LC 0.85,0,0
 C
 SL Make your own custom message!
 SU
-SL Just copy default.txt to another file and modify as desired.
+SL Just copy example.txt to another file and modify as desired.
 SU
 SL Then pass that filename to the lights program.
 SL
