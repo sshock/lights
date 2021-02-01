@@ -27,6 +27,7 @@ including how to turn lights into a stand-alone executable.
 
 * Press F to toggle fullscreen
 * Press F1 to toggle FPS
+* Press space to pause
 * Press ESC to exit
 
 To allow for faster FPS, change `t.window.vsync` to 0 in conf.lua and restart.

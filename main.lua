@@ -7,6 +7,9 @@ local CHARS = 8
 local CHAR_WIDTH = 8
 local CHAR_HEIGHT = 16
 
+local showfps = true
+local pause = false
+
 function setFont(name)
   local hinting = "mono"
   local size = viewGrid.rows
@@ -135,8 +138,6 @@ function initViewGrid()
 end
 
 function love.load(arg)
-  showfps = true
-
   light_color = { 0.85, 0, 0 }
   dark_color = { 0, 0, 0 }
   outline_color = { 1, 0.5, 0.5 }
@@ -153,6 +154,8 @@ function love.keypressed(key, scancode, isrepeat)
     love.window.setFullscreen(not love.window.getFullscreen())
   elseif key == "f1" then
     showfps = not showfps
+  elseif key == "space" then
+    pause = not pause
   end
 end
 
@@ -322,6 +325,8 @@ function updateViewGrid()
 end
 
 function love.update(dt)
+  if pause then return end
+
   repeat
     moveToNextStep()
   until not invisibleAction()
